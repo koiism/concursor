@@ -3,6 +3,9 @@
   "workspaces": {
     "": {
       "name": "concursor",
+      "dependencies": {
+        "@types/qs": "^6.9.18",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -62,6 +65,16 @@
         "vite": "^6.1.0",
         "vitest": "^3.0.5",
         "vscode-ext-gen": "^1.0.0",
+      },
+    },
+    "packages/api": {
+      "name": "@concursor/api",
+      "devDependencies": {
+        "@types/bun": "latest",
+        "qs": "^6.14.0",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
       },
     },
     "packages/utils": {
@@ -219,6 +232,8 @@
     "@clack/core": ["@clack/core@0.4.1", "https://registry.npmmirror.com/@clack/core/-/core-0.4.1.tgz", { "dependencies": { "picocolors": "^1.0.0", "sisteransi": "^1.0.5" } }, "sha512-Pxhij4UXg8KSr7rPek6Zowm+5M22rbd2g1nfojHJkxp5YkFqiZ2+YLEM/XGVIzvGOcM0nqjIFxrpDwWRZYWYjA=="],
 
     "@clack/prompts": ["@clack/prompts@0.10.0", "https://registry.npmmirror.com/@clack/prompts/-/prompts-0.10.0.tgz", { "dependencies": { "@clack/core": "0.4.1", "picocolors": "^1.0.0", "sisteransi": "^1.0.5" } }, "sha512-H3rCl6CwW1NdQt9rE3n373t7o5cthPv7yUoxF2ytZvyvlJv89C5RYMJu83Hed8ODgys5vpBU0GKxIRG83jd8NQ=="],
+
+    "@concursor/api": ["@concursor/api@workspace:packages/api"],
 
     "@concursor/utils": ["@concursor/utils@workspace:packages/utils"],
 
@@ -703,6 +718,8 @@
     "@types/normalize-package-data": ["@types/normalize-package-data@2.4.4", "https://registry.npmmirror.com/@types/normalize-package-data/-/normalize-package-data-2.4.4.tgz", {}, "sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA=="],
 
     "@types/parse-json": ["@types/parse-json@4.0.2", "https://registry.npmmirror.com/@types/parse-json/-/parse-json-4.0.2.tgz", {}, "sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw=="],
+
+    "@types/qs": ["@types/qs@6.9.18", "https://registry.npmmirror.com/@types/qs/-/qs-6.9.18.tgz", {}, "sha512-kK7dgTYDyGqS+e2Q4aK9X3D7q234CIZ1Bv0q/7Z5IwRDoADNU81xXJK/YVyLbLTZCoIwUoDoffFeF+p/eIklAA=="],
 
     "@types/react": ["@types/react@19.0.7", "https://registry.npmmirror.com/@types/react/-/react-19.0.7.tgz", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-MoFsEJKkAtZCrC1r6CM8U22GzhG7u2Wir8ons/aCKH6MBdD1ibV24zOSSkdZVUKqN5i396zG5VKLYZ3yaUZdLA=="],
 

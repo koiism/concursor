@@ -160,49 +160,22 @@ export interface AdminUserAuthOperations {
  */
 export interface Rule {
   id: string;
+  creator:
+    | {
+        relationTo: 'users';
+        value: string | User;
+      }
+    | {
+        relationTo: 'admin-users';
+        value: string | AdminUser;
+      };
   title: string;
   description?: string | null;
-  globs: string;
+  globs?: string | null;
   content: string;
   tags?: (string | Tag)[] | null;
   private?: boolean | null;
-  creator: string | User;
   forkedFrom?: (string | null) | Rule;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "tags".
- */
-export interface Tag {
-  id: string;
-  name: string;
-  count?: number | null;
-  rules?: {
-    docs?: (string | Rule)[];
-    hasNextPage?: boolean;
-    totalDocs?: number;
-  };
-  packages?: {
-    docs?: (string | Package)[];
-    hasNextPage?: boolean;
-    totalDocs?: number;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "packages".
- */
-export interface Package {
-  id: string;
-  name: string;
-  description?: string | null;
-  rules?: (string | Rule)[] | null;
-  private?: boolean | null;
-  tags?: (string | Tag)[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -212,6 +185,7 @@ export interface Package {
  */
 export interface User {
   id: string;
+  name: string;
   avatar?: (string | null) | Media;
   personalPage?: string | null;
   createdRules?: {
@@ -226,6 +200,9 @@ export interface User {
   };
   updatedAt: string;
   createdAt: string;
+  enableAPIKey?: boolean | null;
+  apiKey?: string | null;
+  apiKeyIndex?: string | null;
   email: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
@@ -342,6 +319,49 @@ export interface AdminUser {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: string;
+  name: string;
+  rules?: {
+    docs?: (string | Rule)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  packages?: {
+    docs?: (string | Package)[];
+    hasNextPage?: boolean;
+    totalDocs?: number;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "packages".
+ */
+export interface Package {
+  id: string;
+  creator:
+    | {
+        relationTo: 'users';
+        value: string | User;
+      }
+    | {
+        relationTo: 'admin-users';
+        value: string | AdminUser;
+      };
+  name: string;
+  description?: string | null;
+  rules?: (string | Rule)[] | null;
+  private?: boolean | null;
+  tags?: (string | Tag)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -432,13 +452,13 @@ export interface PayloadMigration {
  * via the `definition` "rules_select".
  */
 export interface RulesSelect<T extends boolean = true> {
+  creator?: T;
   title?: T;
   description?: T;
   globs?: T;
   content?: T;
   tags?: T;
   private?: T;
-  creator?: T;
   forkedFrom?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -449,7 +469,6 @@ export interface RulesSelect<T extends boolean = true> {
  */
 export interface TagsSelect<T extends boolean = true> {
   name?: T;
-  count?: T;
   rules?: T;
   packages?: T;
   updatedAt?: T;
@@ -460,6 +479,7 @@ export interface TagsSelect<T extends boolean = true> {
  * via the `definition` "packages_select".
  */
 export interface PackagesSelect<T extends boolean = true> {
+  creator?: T;
   name?: T;
   description?: T;
   rules?: T;
@@ -575,12 +595,16 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  name?: T;
   avatar?: T;
   personalPage?: T;
   createdRules?: T;
   favoriteRules?: T;
   updatedAt?: T;
   createdAt?: T;
+  enableAPIKey?: T;
+  apiKey?: T;
+  apiKeyIndex?: T;
   email?: T;
   resetPasswordToken?: T;
   resetPasswordExpiration?: T;

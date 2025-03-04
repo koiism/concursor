@@ -11,16 +11,26 @@ export const Users: CollectionConfig = {
     useAsTitle: 'email',
     group: '用户数据',
   },
-  auth: true,
+  auth: {
+    useAPIKey: true,
+  },
   fields: [
+    {
+      name: 'name',
+      type: 'text',
+      required: true,
+      label: '昵称',
+    },
     {
       name: 'avatar',
       type: 'upload',
       relationTo: COLLECTION_SLUGS.MEDIA,
+      label: '头像',
     },
     {
       name: 'personalPage',
       type: 'text',
+      label: '个人主页',
     },
     {
       name: 'createdRules',
@@ -28,6 +38,7 @@ export const Users: CollectionConfig = {
       collection: COLLECTION_SLUGS.RULES,
       on: 'creator',
       hasMany: true,
+      label: '创建的规则',
     },
     {
       name: 'favoriteRules',
@@ -35,6 +46,15 @@ export const Users: CollectionConfig = {
       collection: COLLECTION_SLUGS.FAVORITES,
       on: 'user',
       hasMany: true,
-    }
+      label: '收藏的规则',
+    },
+    {
+      name: 'createdPackages',
+      type: 'join',
+      collection: COLLECTION_SLUGS.PACKAGES,
+      on: 'creator',
+      hasMany: true,
+      label: '创建的集合',
+    },
   ],
 }

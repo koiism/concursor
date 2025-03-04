@@ -13,7 +13,30 @@ export const AdminUsers: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      name: 'name',
+      type: 'text',
+      required: true,
+      label: '昵称',
+    },
+    {
+      name: 'avatar',
+      type: 'upload',
+      relationTo: COLLECTION_SLUGS.MEDIA,
+      label: '头像',
+    },
+    {
+      name: 'personalPage',
+      type: 'text',
+      label: '个人主页',
+    },
+    {
+      name: 'createdRules',
+      type: 'join',
+      collection: COLLECTION_SLUGS.RULES,
+      on: 'creator',
+      hasMany: true,
+      label: '创建的规则',
+    },
   ],
 }

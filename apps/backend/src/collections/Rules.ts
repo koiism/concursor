@@ -1,8 +1,25 @@
+import { anyone } from '@/access/anyone'
+import { authenticated } from '@/access/authenticated'
 import { COLLECTION_SLUGS } from '@/constants/collectionSlugs'
+import { creator } from '@/fields/creator'
 import type { CollectionConfig } from 'payload'
 
 export const Rules: CollectionConfig = {
   slug: COLLECTION_SLUGS.RULES,
+  access: {
+    read: anyone,
+    create: authenticated,
+    update: ({ req, data }) => {
+      return (
+        data?.creator?.relationTo === req.user?.collection && data?.creator?.value === req.user?.id
+      )
+    },
+    delete: ({ req, data }) => {
+      return (
+        data?.creator?.relationTo === req.user?.collection && data?.creator?.value === req.user?.id
+      )
+    },
+  },
   labels: {
     singular: 'Rule',
     plural: 'Rules',
@@ -12,6 +29,7 @@ export const Rules: CollectionConfig = {
     group: 'Cursor Rules',
   },
   fields: [
+    creator(),
     {
       name: 'title',
       type: 'text',
@@ -19,12 +37,11 @@ export const Rules: CollectionConfig = {
     },
     {
       name: 'description',
-      type: 'textarea',
+      type: 'text',
     },
     {
       name: 'globs',
       type: 'text',
-      required: true,
     },
     {
       name: 'content',
@@ -43,15 +60,9 @@ export const Rules: CollectionConfig = {
       defaultValue: false,
     },
     {
-      name: 'creator',
-      type: 'relationship',
-      relationTo: COLLECTION_SLUGS.USERS,
-      required: true,
-    },
-    {
       name: 'forkedFrom',
       type: 'relationship',
       relationTo: COLLECTION_SLUGS.RULES,
-    }
+    },
   ],
-} 
+}

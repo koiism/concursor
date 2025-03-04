@@ -1,0 +1,21 @@
+{
+  "name": "concursor",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:extension": "bun --filter \"manage-cursor\" dev",
+    "dev:backend": "bun --filter \"backend\" dev"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {}
+}

@@ -27,6 +27,7 @@ export const Tags: CollectionConfig = {
       required: true,
       unique: true,
       label: '名称',
+      index: true,
     },
     {
       name: 'rules',

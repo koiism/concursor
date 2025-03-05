@@ -34,10 +34,12 @@ export const Rules: CollectionConfig = {
       name: 'title',
       type: 'text',
       required: true,
+      index: true,
     },
     {
       name: 'description',
       type: 'text',
+      index: true,
     },
     {
       name: 'globs',
@@ -47,6 +49,7 @@ export const Rules: CollectionConfig = {
       name: 'content',
       type: 'textarea',
       required: true,
+      index: true,
     },
     {
       name: 'tags',

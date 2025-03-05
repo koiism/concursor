@@ -51,6 +51,22 @@ export const plugins: Plugin[] = [
     },
   }),
   payloadCloudPlugin(),
+  searchPlugin({
+    collections: [COLLECTION_SLUGS.RULES],
+    searchOverrides: {
+      slug: 'rule-search',
+      admin: {
+        group: '搜索结果',
+      },
+      labels: {
+        singular: 'Rules搜索',
+        plural: 'Rules搜索',
+      },
+      fields: ({ defaultFields }) => {
+        return [...defaultFields]
+      },
+    },
+  }),
   translator({
     collections: allCollectionSlugs,
     globals: [],

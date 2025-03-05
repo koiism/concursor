@@ -15,7 +15,10 @@
 
 <!-- commands -->
 
-**No data**
+| Command                | Title       |
+| ---------------------- | ----------- |
+| `concursor.helloWorld` | Hello World |
+| `concursor.login`      | Login       |
 
 <!-- commands -->
 

@@ -1,7 +1,7 @@
 {
-  "publisher": "antfu",
-  "name": "manage-cursor",
-  "displayName": "manage-cursor",
+  "publisher": "koiism",
+  "name": "concursor",
+  "displayName": "concursor",
   "version": "0.0.0",
   "private": true,
   "packageManager": "bun@1.2.4",
@@ -22,18 +22,22 @@
   },
   "activationEvents": [
     "onStartupFinished",
-    "onCommand:manage-cursor.helloWorld"
+    "onCommand:concursor.helloWorld"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "manage-cursor.helloWorld",
+        "command": "concursor.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "concursor.login",
+        "title": "Login"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "manage-cursor",
+      "title": "concursor",
       "properties": {}
     }
   },
@@ -50,6 +54,10 @@
     "typecheck": "tsc --noEmit",
     "release": "bumpp && nr publish"
   },
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "hono": "^4.7.2"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^4.2.1",
     "@antfu/ni": "^23.3.1",
@@ -62,6 +70,7 @@
     "pnpm": "^10.4.1",
     "reactive-vscode": "^0.2.10",
     "tsup": "^8.3.6",
+    "tsx": "^4.7.1",
     "typescript": "^5.7.3",
     "vite": "^6.1.0",
     "vitest": "^3.0.5",

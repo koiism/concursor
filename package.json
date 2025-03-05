@@ -1,5 +1,4 @@
 {
-  "name": "concursor",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -8,7 +7,7 @@
     "apps/*"
   ],
   "scripts": {
-    "dev:extension": "bun --filter \"manage-cursor\" dev",
+    "dev:extension": "bun --filter \"concursor\" dev",
     "dev:backend": "bun --filter \"backend\" dev"
   },
   "devDependencies": {

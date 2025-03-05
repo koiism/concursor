@@ -1,7 +1,5 @@
-// storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { resendAdapter } from '@payloadcms/email-resend'
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -14,6 +12,7 @@ import { en } from '@payloadcms/translations/languages/en'
 import { getServerSideURL } from '@/utils'
 import { collections } from './collections'
 import { AdminUsers } from './collections/AdminUsers'
+import { plugins } from '../plugins'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -69,10 +68,7 @@ export default buildConfig({
     url: process.env.DATABASE_URI || '',
   }),
   sharp,
-  plugins: [
-    payloadCloudPlugin(),
-    // storage-adapter-placeholder
-  ],
+  plugins,
   email: resendAdapter({
     apiKey: process.env.RESEND_API_KEY || '',
     defaultFromAddress: process.env.NEXT_PUBLIC_RESEND_FROM_EMAIL || '',

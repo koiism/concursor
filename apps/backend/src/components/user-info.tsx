@@ -9,7 +9,6 @@ import { useTranslations } from 'next-intl'
 export function UserInfo() {
   const { user, isLoading } = useAuth()
   const t = useTranslations()
-  console.log(user)
 
   if (isLoading) {
     return <div>Loading...</div>

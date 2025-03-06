@@ -29,7 +29,6 @@ export function SignUpForm() {
 
       // TODO: Implement sign up logic
       console.log('Sign up with:', { email, password })
-      
     } catch (error) {
       console.error('Failed to sign up:', error)
     } finally {

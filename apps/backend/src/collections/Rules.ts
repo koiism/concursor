@@ -67,5 +67,10 @@ export const Rules: CollectionConfig = {
       type: 'relationship',
       relationTo: COLLECTION_SLUGS.RULES,
     },
+    {
+      name: 'downloadCount',
+      type: 'number',
+      defaultValue: 0,
+    },
   ],
 }

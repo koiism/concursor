@@ -1,4 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin'
 import { withPayload } from '@payloadcms/next/withPayload'
+
+const withNextIntl = createNextIntlPlugin()
 
 const NEXT_PUBLIC_SERVER_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -29,4 +32,4 @@ const nextConfig = {
   serverExternalPackages: [],
 }
 
-export default withPayload(nextConfig)
+export default withNextIntl(withPayload(nextConfig))

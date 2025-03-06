@@ -186,6 +186,7 @@ export interface Rule {
   tags?: (string | Tag)[] | null;
   private?: boolean | null;
   forkedFrom?: (string | null) | Rule;
+  downloadCount?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -702,6 +703,7 @@ export interface RulesSelect<T extends boolean = true> {
   tags?: T;
   private?: T;
   forkedFrom?: T;
+  downloadCount?: T;
   updatedAt?: T;
   createdAt?: T;
 }

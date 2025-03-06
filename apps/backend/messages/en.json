@@ -1,0 +1,17 @@
+{
+  "hello": "Hello",
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "current": "Current Theme"
+  },
+  "nav": {
+    "home": "Home",
+    "rules": "Rules",
+    "pricing": "Pricing",
+    "extension": "Extension",
+    "generate": "Generate",
+    "login": "Sign in"
+  },
+  "switchLanguage": "Switch Language"
+}

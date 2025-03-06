@@ -1,0 +1,17 @@
+{
+  "hello": "你好",
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "current": "当前主题"
+  },
+  "nav": {
+    "home": "首页",
+    "rules": "规则",
+    "pricing": "购买",
+    "extension": "扩展",
+    "generate": "在线生成",
+    "login": "登录"
+  },
+  "switchLanguage": "切换语言"
+}

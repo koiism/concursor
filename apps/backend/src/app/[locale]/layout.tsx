@@ -12,6 +12,7 @@ import { headers } from 'next/headers'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import { getThemeServer } from '@/utils/getThemeServer'
+import { AuthProvider } from '@/providers/auth-provider'
 
 export const metadata = {
   description: 'A blank template using Payload in a Next.js app.',
@@ -50,12 +51,16 @@ export default async function RootLayout({
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
-      <body className={cn('min-h-screen h-screen bg-background font-sans antialiased flex flex-col')}>
+      <body
+        className={cn('min-h-screen h-screen bg-background font-sans antialiased flex flex-col')}
+      >
         <ThemeProvider>
           <UserProvider user={user}>
             <NextIntlClientProvider messages={messages} locale={locale}>
-              <Header />
-              <main className="container mx-auto flex-1 h-full">{children}</main>
+              <AuthProvider>
+                <Header />
+                <main className="container mx-auto flex-1 h-full">{children}</main>
+              </AuthProvider>
             </NextIntlClientProvider>
           </UserProvider>
         </ThemeProvider>

@@ -18,7 +18,6 @@ export function LanguageToggle() {
   const t = useTranslations()
 
   const switchLanguage = (locale: string) => {
-    console.log('switchLanguage', locale, pathname)
     router.replace(pathname, { locale })
   }
 

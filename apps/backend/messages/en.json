@@ -24,6 +24,7 @@
     "signup": "Sign up",
     "forgotPassword": "Forgot password?",
     "noAccount": "Don't have an account?",
-    "haveAccount": "Already have an account?"
+    "haveAccount": "Already have an account?",
+    "signOut": "Sign Out"
   }
 }

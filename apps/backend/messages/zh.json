@@ -24,6 +24,7 @@
     "signup": "注册",
     "forgotPassword": "忘记密码？",
     "noAccount": "还没有账号？",
-    "haveAccount": "已有账号？"
+    "haveAccount": "已有账号？",
+    "signOut": "退出"
   }
 }

@@ -94,7 +94,6 @@ export const InitTheme: React.FC = () => {
     }
 
     document.documentElement.classList.toggle('dark', themeToSet === 'dark')
-    console.log('theme', document.documentElement.classList)
   })();
   `,
       }}

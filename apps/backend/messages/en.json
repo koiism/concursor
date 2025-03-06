@@ -1,17 +1,29 @@
 {
   "hello": "Hello",
-  "theme": {
-    "light": "Light",
-    "dark": "Dark",
-    "current": "Current Theme"
-  },
   "nav": {
     "home": "Home",
     "rules": "Rules",
     "pricing": "Pricing",
     "extension": "Extension",
     "generate": "Generate",
-    "login": "Sign in"
+    "signin": "Sign in",
+    "signup": "Sign up"
   },
-  "switchLanguage": "Switch Language"
+  "switchLanguage": "Switch Language",
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "createAccount": "Create an account",
+    "loginWithSocial": "Sign in with your email or social account",
+    "signupWithSocial": "Create an account with your email or social account",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithGithub": "Continue with GitHub",
+    "orContinueWith": "or continue with",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "login": "Sign in",
+    "signup": "Sign up",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  }
 }

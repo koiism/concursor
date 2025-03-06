@@ -30,7 +30,7 @@ export function LanguageToggle() {
           <span className="sr-only">{t('switchLanguage')}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" className="w-fit gap-1">
         {locales.map((locale) => (
           <DropdownMenuItem
             key={locale}

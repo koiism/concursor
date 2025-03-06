@@ -36,8 +36,11 @@ export function Header() {
           <nav className="flex items-center space-x-2">
             <ModeToggle />
             <LanguageToggle />
-            <Button variant="default" size="sm">
-              {t('nav.login')}
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/signin">{t('nav.signin')}</Link>
+            </Button>
+            <Button variant="default" size="sm" asChild>
+              <Link href="/signup">{t('nav.signup')}</Link>
             </Button>
           </nav>
         </div>

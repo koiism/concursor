@@ -1,17 +1,29 @@
 {
   "hello": "你好",
-  "theme": {
-    "light": "浅色",
-    "dark": "深色",
-    "current": "当前主题"
-  },
   "nav": {
     "home": "首页",
     "rules": "规则",
     "pricing": "购买",
     "extension": "扩展",
     "generate": "在线生成",
-    "login": "登录"
+    "signin": "登录",
+    "signup": "注册"
   },
-  "switchLanguage": "切换语言"
+  "switchLanguage": "切换语言",
+  "auth": {
+    "welcomeBack": "欢迎回来",
+    "createAccount": "创建账号",
+    "loginWithSocial": "使用邮箱或社交账号登录",
+    "signupWithSocial": "使用邮箱或社交账号注册",
+    "continueWithGoogle": "使用 Google 账号继续",
+    "continueWithGithub": "使用 GitHub 账号继续",
+    "orContinueWith": "或继续使用",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "login": "登录",
+    "signup": "注册",
+    "forgotPassword": "忘记密码？",
+    "noAccount": "还没有账号？",
+    "haveAccount": "已有账号？"
+  }
 }

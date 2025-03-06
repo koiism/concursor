@@ -7,6 +7,8 @@ import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/
 import { translator, copyResolver, googleResolver } from '@payload-enchants/translator'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { allCollectionSlugs, COLLECTION_SLUGS } from '@/constants/collectionSlugs'
+import { authjsPlugin } from 'payload-authjs'
+import { authConfig } from '@/utils/auth'
 export const plugins: Plugin[] = [
   formBuilderPlugin({
     fields: {
@@ -68,7 +70,7 @@ export const plugins: Plugin[] = [
     },
   }),
   translator({
-    collections: allCollectionSlugs,
+    collections: [],
     globals: [],
     resolvers: [
       copyResolver(),
@@ -89,5 +91,8 @@ export const plugins: Plugin[] = [
       },
       region: process.env.S3_REGION || '',
     },
+  }),
+  authjsPlugin({
+    authjsConfig: authConfig,
   }),
 ]

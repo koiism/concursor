@@ -1,13 +1,18 @@
+import { anyone } from '@/access/anyone'
 import { COLLECTION_SLUGS } from '@/constants/collectionSlugs'
 import type { CollectionConfig } from 'payload'
 
 export const Users: CollectionConfig = {
   slug: COLLECTION_SLUGS.USERS,
   access: {
-    read: () => true,
-    update: () => true,
-    delete: () => true,
-    create: () => true,
+    read: anyone,
+    update: ({ req, data }) =>  {
+      return req.user?.collection === 'admin-users' || req.user?.id === data?.id
+    },
+    delete: ({ req, data }) => {
+      return req.user?.collection === 'admin-users' || req.user?.id === data?.id
+    },
+    create: anyone,
   },
   labels: {
     singular: '用户',

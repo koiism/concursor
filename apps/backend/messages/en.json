@@ -7,7 +7,18 @@
     "extension": "Extension",
     "generate": "Generate",
     "signin": "Sign in",
-    "signup": "Sign up"
+    "signup": "Sign up",
+    "mcp": "MCPs"
+  },
+  "metadata": {
+    "global": {
+      "title": "ConCursor - Your Assistant for Cursor Rules",
+      "description": "ConCursor is your assistant for Cursor Rules. It helps you write better code faster."
+    },
+    "signin": {
+      "title": "Welcome back",
+      "description": "Login with your email or social account"
+    }
   },
   "switchLanguage": "Switch Language",
   "auth": {

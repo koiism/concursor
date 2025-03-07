@@ -21,18 +21,13 @@
     "vscode": "^1.54.0"
   },
   "activationEvents": [
-    "onStartupFinished",
-    "onCommand:concursor.helloWorld"
+    "onStartupFinished"
   ],
   "contributes": {
     "commands": [
       {
-        "command": "concursor.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "concursor.login",
-        "title": "Login"
+        "title": "Login Concursor"
       }
     ],
     "configuration": {
@@ -56,25 +51,25 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.8",
-    "hono": "^4.7.2"
+    "hono": "^4.7.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.2.1",
+    "@antfu/eslint-config": "^4.6.0",
     "@antfu/ni": "^23.3.1",
-    "@types/node": "^22.13.4",
-    "@types/vscode": "^1.97.0",
+    "@types/node": "^22.13.9",
+    "@types/vscode": "^1.98.0",
     "@vscode/vsce": "^3.2.2",
     "bumpp": "^10.0.3",
-    "eslint": "^9.20.1",
+    "eslint": "^9.21.0",
     "esno": "^4.8.0",
-    "pnpm": "^10.4.1",
-    "reactive-vscode": "^0.2.10",
-    "tsup": "^8.3.6",
-    "tsx": "^4.7.1",
-    "typescript": "^5.7.3",
-    "vite": "^6.1.0",
-    "vitest": "^3.0.5",
-    "vscode-ext-gen": "^1.0.0"
+    "pnpm": "^10.6.1",
+    "reactive-vscode": "^0.2.13",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.1",
+    "vitest": "^3.0.8",
+    "vscode-ext-gen": "^1.0.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

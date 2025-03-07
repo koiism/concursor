@@ -3,6 +3,7 @@ import { ModeToggle } from '@/components/ModeToggle'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { Link } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
+import { AuthButton } from './AuthButton'
 
 function HeaderLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -29,6 +30,7 @@ export function Header() {
             <HeaderLink href="/pricing">{t('nav.pricing')}</HeaderLink>
             <HeaderLink href="/extension">{t('nav.extension')}</HeaderLink>
             <HeaderLink href="/generate">{t('nav.generate')}</HeaderLink>
+            <HeaderLink href="/mcp">{t('nav.mcp')}</HeaderLink>
           </nav>
         </div>
 
@@ -36,12 +38,7 @@ export function Header() {
           <nav className="flex items-center space-x-2">
             <ModeToggle />
             <LanguageToggle />
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/signin">{t('nav.signin')}</Link>
-            </Button>
-            <Button variant="default" size="sm" asChild>
-              <Link href="/signup">{t('nav.signup')}</Link>
-            </Button>
+            <AuthButton />
           </nav>
         </div>
       </div>

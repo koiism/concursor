@@ -11,7 +11,9 @@ export const AdminUsers: CollectionConfig = {
     useAsTitle: 'email',
     group: '用户数据',
   },
-  auth: true,
+  auth: {
+    useAPIKey: true,
+  },
   fields: [
     {
       name: 'name',

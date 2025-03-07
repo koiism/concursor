@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import { Icons } from '@/components/icons'
 import { useTranslations } from 'next-intl'
@@ -16,22 +18,14 @@ export function SocialAuthButtons() {
 
   return (
     <div className="grid gap-4">
-      <Button 
-        variant="outline" 
-        type="button"
-        onClick={() => handleSocialLogin('google')}
-      >
+      <Button variant="outline" type="button" onClick={() => handleSocialLogin('google')}>
         <Icons.google className="mr-2 h-4 w-4" />
         {t('auth.continueWithGoogle')}
       </Button>
-      <Button 
-        variant="outline" 
-        type="button"
-        onClick={() => handleSocialLogin('github')}
-      >
+      <Button variant="outline" type="button" onClick={() => handleSocialLogin('github')}>
         <Icons.gitHub className="mr-2 h-4 w-4" />
         {t('auth.continueWithGithub')}
       </Button>
     </div>
   )
-} 
+}

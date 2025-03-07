@@ -55,6 +55,7 @@
     "@tailwindcss/postcss": "^4.0.9",
     "autoprefixer": "^10.4.19",
     "babel-plugin-react-compiler": "^19.0.0-beta-40c6c23-20250301",
+    "change-case": "^5.4.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.0",
@@ -88,6 +89,8 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@iconify-json/logos": "^1.2.4",
+    "@iconify-json/simple-icons": "^1.2.27",
+    "@iconify/react": "^5.2.0",
     "@types/node": "^22.5.4",
     "@types/react": "19.0.7",
     "@types/react-dom": "19.0.3",

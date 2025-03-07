@@ -7,7 +7,18 @@
     "extension": "扩展",
     "generate": "在线生成",
     "signin": "登录",
-    "signup": "注册"
+    "signup": "注册",
+    "mcp": "MCP服务"
+  },
+  "metadata": {
+    "global": {
+      "title": "ConCursor - 你的 Cursor 规则助手",
+      "description": "ConCursor 是你的 Cursor 规则助手。它帮助你更快地编写更好的代码。"
+    },
+    "signin": {
+      "title": "欢迎回来",
+      "description": "使用邮箱或社交账号登录"
+    }
   },
   "switchLanguage": "切换语言",
   "auth": {

@@ -2,7 +2,7 @@ import React from 'react'
 import '@/global.css'
 import { InitTheme, ThemeProvider } from '@/providers/themeProvider'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import { Header } from '@/components/Header'
@@ -13,10 +13,15 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 import { getThemeServer } from '@/utils/getThemeServer'
 import { AuthProvider } from '@/providers/auth-provider'
+import { Metadata } from 'next'
 
-export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations()
+
+  return {
+    title: t('metadata.global.title'),
+    description: t('metadata.global.description'),
+  }
 }
 
 export default async function RootLayout({
@@ -43,13 +48,14 @@ export default async function RootLayout({
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
   const { user } = await payload.auth({ headers: headersList })
+  const t = await getTranslations()
 
   return (
     <html lang={locale} suppressHydrationWarning className={theme === 'dark' ? 'dark' : ''}>
       <head>
         <InitTheme />
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
+        <title>{t('metadata.global.title')}</title>
+        <meta name="description" content={t('metadata.global.description')} />
       </head>
       <body
         className={cn('min-h-screen h-screen bg-background font-sans antialiased flex flex-col')}

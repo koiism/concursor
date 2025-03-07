@@ -2,7 +2,6 @@ import {
   LucideProps,
   Moon,
   SunMedium,
-  Twitter,
   Loader2,
   type Icon as LucideIcon,
 } from "lucide-react"
@@ -12,7 +11,6 @@ export type Icon = typeof LucideIcon
 export const Icons = {
   sun: SunMedium,
   moon: Moon,
-  twitter: Twitter,
   loader2: Loader2,
   logo: ({ ...props }: LucideProps) => (
     <svg

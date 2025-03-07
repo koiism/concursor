@@ -20,9 +20,5 @@ export const authConfig: NextAuthConfig = {
     signOut: '/signout',
     error: '/error',
   },
-  events: {
-    signIn: async ({ user, ...rest }) => {
-      console.log('signIn', user, rest)
-    },
-  },
+  events: {},
 }

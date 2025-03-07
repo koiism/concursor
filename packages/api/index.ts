@@ -299,13 +299,13 @@ export function buildQueryString(args: Record<string, unknown> | undefined) {
 
 let clientInstance: PayloadApiClient<Config> | null = null;
 
-export function getPayload(): PayloadApiClient<Config> {
+export function getPayload(
+  apiURL?: string
+): PayloadApiClient<Config> {
   if (!clientInstance) {
     clientInstance = new PayloadApiClient<Config>({
-      apiURL: `${getClientSideURL()}/api`,
+      apiURL: `${apiURL || getClientSideURL()}/api`,
     });
   }
   return clientInstance;
 }
-
-export default getPayload();

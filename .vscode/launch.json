@@ -11,6 +11,9 @@
       "outFiles": [
         "${workspaceFolder}/apps/extension/dist/**/*.js"
       ],
+      "env": {
+        "NODE_ENV": "development"
+      }
       // "preLaunchTask": "${defaultBuildTask}"
     }
   ]

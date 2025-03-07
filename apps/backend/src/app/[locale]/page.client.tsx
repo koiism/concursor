@@ -1,7 +1,8 @@
 'use client'
 
-import { UserInfo } from '@/components/user-info'
+import { useUser } from '@/providers/userProvider'
 
 export default function HomePage() {
-  return <UserInfo />
+  const user = useUser()
+  return <div>{user.user?.apiKey}</div>
 }

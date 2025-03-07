@@ -6,7 +6,7 @@ export const Users: CollectionConfig = {
   slug: COLLECTION_SLUGS.USERS,
   access: {
     read: anyone,
-    update: ({ req, data }) =>  {
+    update: ({ req, data }) => {
       return req.user?.collection === 'admin-users' || req.user?.id === data?.id
     },
     delete: ({ req, data }) => {
@@ -24,6 +24,9 @@ export const Users: CollectionConfig = {
   },
   auth: {
     useAPIKey: true,
+  },
+  custom: {
+    enableLocalStrategy: true,
   },
   fields: [
     {

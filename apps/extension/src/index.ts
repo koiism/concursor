@@ -1,17 +1,19 @@
+import { getPayload } from '@concursor/api'
 import { defineExtension, useCommand } from 'reactive-vscode'
-import { authentication, window } from 'vscode'
+import { window } from 'vscode'
+import * as Meta from './generated/meta'
 import { startServer } from './server'
+import { getBaseUrl, getEnv, logger } from './utils'
 
-const { activate, deactivate } = defineExtension(() => {
-  // 显示初始问候消息
-  window.showInformationMessage('Hello')
-
-  useCommand('concursor.helloWorld', () => {
-    window.showInformationMessage('Hello ??')
-  })
-
-  useCommand('concursor.login', () => {
-    authentication.getSession('github', ['repo'], {})
+const { activate, deactivate } = defineExtension(async () => {
+  const payload = getPayload(getBaseUrl())
+  useCommand(Meta.commands.login, async () => {
+    window.showInformationMessage(getBaseUrl())
+    window.showInformationMessage(getEnv())
+    const users = await payload.find({
+      collection: 'users',
+    })
+    logger.info(users)
   })
 })
 startServer()

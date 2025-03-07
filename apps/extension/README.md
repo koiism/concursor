@@ -15,10 +15,9 @@
 
 <!-- commands -->
 
-| Command                | Title       |
-| ---------------------- | ----------- |
-| `concursor.helloWorld` | Hello World |
-| `concursor.login`      | Login       |
+| Command           | Title           |
+| ----------------- | --------------- |
+| `concursor.login` | Login Concursor |
 
 <!-- commands -->
 

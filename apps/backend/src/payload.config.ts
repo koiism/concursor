@@ -9,7 +9,7 @@ import sharp from 'sharp'
 import { zh } from '@payloadcms/translations/languages/zh'
 import { en } from '@payloadcms/translations/languages/en'
 
-import { getServerSideURL } from '@/utils'
+import { getServerSideURL } from '@concursor/utils'
 import { collections } from './collections'
 import { AdminUsers } from './collections/AdminUsers'
 import { plugins } from '../plugins'
@@ -17,7 +17,7 @@ import { plugins } from '../plugins'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-export default buildConfig({
+const config = buildConfig({
   i18n: {
     fallbackLanguage: 'zh',
     supportedLanguages: {
@@ -57,7 +57,7 @@ export default buildConfig({
       ],
     },
   },
-  cors: [getServerSideURL()].filter(Boolean),
+  cors: [getServerSideURL(), 'http://localhost:3000'].filter(Boolean),
   collections,
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
@@ -75,3 +75,5 @@ export default buildConfig({
     defaultFromName: process.env.NEXT_PUBLIC_RESEND_FROM_NAME || '',
   }),
 })
+
+export default config

@@ -1,6 +1,7 @@
 ---
 description: Tailwind CSS coding guidelines and best practices
 globs: *.html, *.jsx, *.tsx, *.css
+alwaysApply: false
 ---
 
 <coding_guidelines>

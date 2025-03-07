@@ -1,6 +1,7 @@
 ---
 description: Rules for working with shadcn UI components
 globs: *.tsx,*.ts,*.css
+alwaysApply: false
 ---
 
 <coding_guidelines>

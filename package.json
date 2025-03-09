@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "dev:extension": "bun --filter \"concursor\" dev",
-    "dev:backend": "bun --filter \"backend\" dev"
+    "dev:backend": "bun --filter \"backend\" dev",
+    "build:backend": "bun --filter \"backend\" build"
   },
   "devDependencies": {
     "@types/bun": "latest"

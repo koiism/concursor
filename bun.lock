@@ -63,6 +63,7 @@
         "graphql": "^16.8.1",
         "input-otp": "^1.4.2",
         "lucide-react": "^0.477.0",
+        "motion": "^12.4.10",
         "next": "15.1.5",
         "next-auth": "5.0.0-beta.25",
         "next-intl": "^3.26.5",
@@ -1682,6 +1683,8 @@
 
     "fraction.js": ["fraction.js@4.3.7", "https://registry.npmmirror.com/fraction.js/-/fraction.js-4.3.7.tgz", {}, "sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew=="],
 
+    "framer-motion": ["framer-motion@12.4.10", "https://registry.npmmirror.com/framer-motion/-/framer-motion-12.4.10.tgz", { "dependencies": { "motion-dom": "^12.4.10", "motion-utils": "^12.4.10", "tslib": "^2.4.0" }, "peerDependencies": { "@emotion/is-prop-valid": "*", "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["@emotion/is-prop-valid", "react", "react-dom"] }, "sha512-3Msuyjcr1Pb5hjkn4EJcRe1HumaveP0Gbv4DBMKTPKcV/1GSMkQXj+Uqgneys+9DPcZM18Hac9qY9iUEF5LZtg=="],
+
     "fs-constants": ["fs-constants@1.0.0", "https://registry.npmmirror.com/fs-constants/-/fs-constants-1.0.0.tgz", {}, "sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow=="],
 
     "fs-extra": ["fs-extra@11.3.0", "https://registry.npmmirror.com/fs-extra/-/fs-extra-11.3.0.tgz", { "dependencies": { "graceful-fs": "^4.2.0", "jsonfile": "^6.0.1", "universalify": "^2.0.0" } }, "sha512-Z4XaCL6dUDHfP/jT25jJKMmtxvuwbkrD1vNSMFlo9lNLY2c5FHYSQgHPRZUjAB26TpDEoW9HCOgplrdbaPV/ew=="],
@@ -2189,6 +2192,12 @@
     "mongoose-aggregate-paginate-v2": ["mongoose-aggregate-paginate-v2@1.1.2", "https://registry.npmmirror.com/mongoose-aggregate-paginate-v2/-/mongoose-aggregate-paginate-v2-1.1.2.tgz", {}, "sha512-Ai478tHedZy3U2ITBEp2H4rQEviRan3TK4p/umlFqIzgPF1R0hNKvzzQGIb1l2h+Z32QLU3NqaoWKu4vOOUElQ=="],
 
     "mongoose-paginate-v2": ["mongoose-paginate-v2@1.8.5", "https://registry.npmmirror.com/mongoose-paginate-v2/-/mongoose-paginate-v2-1.8.5.tgz", {}, "sha512-kFxhot+yw9KmpAGSSrF/o+f00aC2uawgNUbhyaM0USS9L7dln1NA77/pLg4lgOaRgXMtfgCENamjqZwIM1Zrig=="],
+
+    "motion": ["motion@12.4.10", "https://registry.npmmirror.com/motion/-/motion-12.4.10.tgz", { "dependencies": { "framer-motion": "^12.4.10", "tslib": "^2.4.0" }, "peerDependencies": { "@emotion/is-prop-valid": "*", "react": "^18.0.0 || ^19.0.0", "react-dom": "^18.0.0 || ^19.0.0" }, "optionalPeers": ["@emotion/is-prop-valid", "react", "react-dom"] }, "sha512-AM21Lyfn7ZHO+nBuHJEA2REFgS3kUM83CLZnzM0ZY1/sVeKGkCtV4LF4O/YsQXyZ9mrUrrnTaUkKquS4eaIYjg=="],
+
+    "motion-dom": ["motion-dom@12.4.10", "https://registry.npmmirror.com/motion-dom/-/motion-dom-12.4.10.tgz", { "dependencies": { "motion-utils": "^12.4.10" } }, "sha512-ISP5u6FTceoD6qKdLupIPU/LyXBrxGox+P2e3mBbm1+pLdlBbwv01YENJr7+1WZnW5ucVKzFScYsV1eXTCG4Xg=="],
+
+    "motion-utils": ["motion-utils@12.4.10", "https://registry.npmmirror.com/motion-utils/-/motion-utils-12.4.10.tgz", {}, "sha512-NPwZd94V013SwRf++jMrk2+HEBgPkeIE2RiOzhAuuQlqxMJPkKt/LXVh6Upl+iN8oarSGD2dlY5/bqgsYXDABA=="],
 
     "mpath": ["mpath@0.9.0", "https://registry.npmmirror.com/mpath/-/mpath-0.9.0.tgz", {}, "sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew=="],
 

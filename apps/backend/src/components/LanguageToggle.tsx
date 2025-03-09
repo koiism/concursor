@@ -11,14 +11,22 @@ import {
 import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, usePathname } from '@/i18n/routing'
 import { locales, LANGUAGE_LABELS } from '@/i18n/routing'
+import { useSearchParams } from 'next/navigation'
 export function LanguageToggle() {
   const router = useRouter()
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   const currentLocale = useLocale()
   const t = useTranslations()
 
   const switchLanguage = (locale: string) => {
-    router.replace(pathname, { locale })
+    console.log('switchLanguage', locale, pathname)
+    router.replace({
+      pathname,
+      query: {
+        ...Object.fromEntries(searchParams.entries()),
+      },
+    }, { locale })
   }
 
   return (

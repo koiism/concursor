@@ -5,6 +5,7 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 import { headers } from 'next/headers'
 import { getTranslations } from 'next-intl/server'
+import SignInPageClient from './page.client'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations()
@@ -19,7 +20,7 @@ export default async function SignInPage({
   searchParams: searchParamsPromise,
   params,
 }: {
-  searchParams: Promise<{ redirectTo?: string }>
+  searchParams: Promise<{ redirectTo?: string; source?: string }>
   params: Promise<{ locale: string }>
 }) {
   const headersList = await headers()
@@ -29,16 +30,12 @@ export default async function SignInPage({
   const searchParams = await searchParamsPromise
   const { locale } = await params
 
-  if (user) {
+  if (searchParams.source !== 'extension' && user) {
     redirect({
       href: searchParams.redirectTo || '/',
       locale: locale,
     })
   }
 
-  return (
-    <div className="container relative flex items-center justify-center h-full">
-      <SocialAuthButtons />
-    </div>
-  )
+  return <SignInPageClient />
 }

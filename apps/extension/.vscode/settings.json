@@ -73,32 +73,12 @@
     "concursor"
   ],
   "i18n-ally.localesPaths": [
-    "apps/**/messages",
-    "apps/**/l10n"
-  ],
-  "i18n-ally.sourceLanguage": "en",
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.sortKeys": true,
-  "i18n-ally.sortCompare": "binary",
-  "i18n-ally.keepFulfilled": true,
-  "i18n-ally.translate.promptSource": true,
-  "i18n-ally.pathMatcher": "{locale}.json",
-  "i18n-ally.translate.saveAsCandidates": true,
-  "i18n-ally.keysInUse": [
-    "view.progress_submenu.translated_keys",
-    "view.progress_submenu.missing_keys",
-    "view.progress_submenu.empty_keys"
-  ],
-  "i18n-ally.usage.scanningIgnore": [
-    "apps",
-  ],
-  "i18n-ally.regex.usageMatchAppend": [
-    "/\\*\\s*i18n\\s*\\*/\\s*['\"`]({key})['\"`]"
+    "apps/extension/l10n"
   ],
   "i18n-ally.enabledFrameworks": [
-    "vscode",
-    "next-intl",
-    "react",
-    "general"
+    "vscode"
   ],
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.useVscodeL10n": true,
+  "i18n-ally.annotationInPlace": false
 }

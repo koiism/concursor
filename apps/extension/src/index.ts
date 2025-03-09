@@ -1,20 +1,12 @@
-import { getPayload } from '@concursor/api'
-import { defineExtension, useCommand } from 'reactive-vscode'
-import { window } from 'vscode'
-import * as Meta from './generated/meta'
+import { defineExtension } from 'reactive-vscode'
+import { useCommands } from './commands'
 import { startServer } from './server'
-import { getBaseUrl, getEnv, logger } from './utils'
+import { onLoad } from './utils/onLoad'
 
 const { activate, deactivate } = defineExtension(async () => {
-  const payload = getPayload(getBaseUrl())
-  useCommand(Meta.commands.login, async () => {
-    window.showInformationMessage(getBaseUrl())
-    window.showInformationMessage(getEnv())
-    const users = await payload.find({
-      collection: 'users',
-    })
-    logger.info(users)
-  })
+  onLoad()
+
+  useCommands()
 })
 startServer()
 

@@ -25,6 +25,20 @@ export class PayloadApiClient<C extends ConfigType> {
     this.apiURL = apiURL;
   }
 
+  async auth<T extends keyof C['collections']>({
+    collection,
+    ...toQs
+  }: {
+    collection: T;
+  }) {
+    const qs = buildQueryString(toQs);
+    const response = await this.fetcher(`${this.apiURL}/${collection.toString()}/me${qs}`, {
+      method: 'GET',
+    });
+
+    return response.json();
+  }
+
   async create<T extends keyof C['collections']>({
     collection,
     data,
